@@ -34,7 +34,7 @@ class Brain:
         self.client = ClientClass(path)
         self.bytes = self.size()
         self.mb = "{} MB".format(round(self.bytes / 1000000))
-        self.set_namespace(namespace)
+#         self.set_namespace(namespace)
 
     ##########################################################################################
     # CORE FUNCTIONS
@@ -370,11 +370,10 @@ class Brain:
 
         # OTHERWISE, CREATE THE NAMESPACES OBJECT AND ADD TO PLASMA
         else:
-            pass
-#             self.client.put(
-#                 set([self.namespace, "default"]),
-#                 plasma.ObjectID(b"brain_namespaces_set"),
-#             )
+            self.client.put(
+                set([self.namespace, "default"]),
+                plasma.ObjectID(b"brain_namespaces_set"),
+            )
 
         # RETURN THE CURRENT NAMESPACE
         return self.namespace
