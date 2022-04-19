@@ -370,10 +370,11 @@ class Brain:
 
         # OTHERWISE, CREATE THE NAMESPACES OBJECT AND ADD TO PLASMA
         else:
-            self.client.put(
-                set([self.namespace, "default"]),
-                plasma.ObjectID(b"brain_namespaces_set"),
-            )
+            pass
+#             self.client.put(
+#                 set([self.namespace, "default"]),
+#                 plasma.ObjectID(b"brain_namespaces_set"),
+#             )
 
         # RETURN THE CURRENT NAMESPACE
         return self.namespace
